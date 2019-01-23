@@ -10,7 +10,9 @@ ENV LANGUAGE=ru_RU.utf8
 RUN update-locale LC_ALL="ru_RU.utf8" LANG="ru_RU.utf8" LANGUAGE="ru_RU"
 
 RUN mkdir -p /apps/study
+RUN mkdir -p /bundle_cache
 ADD . /apps/study
 WORKDIR /apps/study
+RUN bundle install --jobs 4 --no-binstubs
 
 CMD bash
