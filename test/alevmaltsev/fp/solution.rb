@@ -15,7 +15,7 @@ module Alevmaltsev
       end
 
       def chars_count(films, threshold)
-        films.reduce(0) { |sum, film| film['rating_kinopoisk'].to_f >= threshold.to_f && film['name'].include?('и') ? sum + 1 : sum }
+        films.reduce(0) { |a, e| e['rating_kinopoisk'].to_f >= threshold.to_f && e['name'].include?('и') ? a + 1 : a }
       end
     end
   end

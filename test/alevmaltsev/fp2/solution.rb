@@ -22,7 +22,7 @@ module Alevmaltsev
       # Написать свою функцию my_compact
       def my_compact
         new_array = MyArray.new
-        my_each { |el| new_array.push el if !el.nil? }
+        my_each { |el| new_array.push el unless el.nil? }
         new_array
       end
 
